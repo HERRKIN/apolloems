@@ -1,10 +1,13 @@
 # Easy Modularization Scheme for Apollo-Server (Graphql)
 
-This package allows you to do in an easy way the schema modularization for your server.
+This package allows you modularize your Graphql schema easily on your server.
 
 ### Prerequisites
 
-You need an apollo-server installation in your server and you need to put all your types in /schema/types and resolvers in /schema/resolvers
+ ```apollo-server```
+
+ All of your schema types must be placed in
+ `/schema/types` and the resolvers in `/schema/resolvers`
 
 ### Installing
 
@@ -16,9 +19,9 @@ npm install --save apolloems
 
 ### How to use
 
-This package reads two folders. '/schema/resolvers/' and '/schema/types/'. So, you can generate automatically a Schema.
+This module reads the files in two folders. `/schema/resolvers/` and `/schema/types/`. this will automatically  generate a Graphql Schema for you.
 
-You can see the '/example' folder for more help. But it's easy to understand.
+there is an `/example`folder if so you can see how it works.
 
 1. Install this package
 2. In your server.js (or equivalent) require easy-modularization-scheme and call the functon ems to generate the schema
@@ -54,13 +57,13 @@ const RootQuery = `
   posts: [Post]
 `
 
-const Mutation = `
-  upvotePost (
-    postId: Int!
+const MutatAll the = `
+  upvotePost  must be placed in the (
+    postId:
   ): Post
 `
 
-const Type = () => [Post]
+const Type = () =>  directlyPbst]
 module.exports = {
   Type,
   RootQuery,
@@ -79,11 +82,11 @@ module.exports = {
 }
 ```
 
-You need to put in Type function ALL the types in the file. You can include several types. But for recommendation, one variable per type (If you want to declare a Type called Books for example, i suggest use const Book = `type Book ...`)
+All the types in the file must be placed in the Type function. You could include several types directly but its cleaner to use one variable per type (If you want to declare a Type called Books for example, i suggest use ```const Book = `type Book ...```)
 
-If you don't declare a RootQuery or Mutation you can avoid their declaration.
+If you don't use RootQuery or Mutation you can avoid their declaration.
 
-4. With the resolvers. You need to add in this way:
+4. This is how resolvers work:
 ```
 const { find, filter } = require('lodash');
 // example data
